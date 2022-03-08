@@ -1,0 +1,22 @@
+body {
+  background-color: azure;
+  font-family: helvetica sans-serif;
+  font-size: large;
+}
+header {
+  height: 25%;
+}
+main {
+  height: 50%;
+}
+footer {
+  height: 25%;
+}
+h1 {
+  font-size: xx-large;
+  font-weight: bolder;
+}
+h2 {
+  font-size: x-large;
+  font-weight: bolder;
+}
