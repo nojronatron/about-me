@@ -6,6 +6,8 @@ boilerplate I build an app with a direct and powerful purpose. It does all of th
 
 ### Author: Jon Rumsey
 
+Thanks go to classmate Kyle Honaker for help with some CSS rules.
+
 ### Links and Resources
 
 - The css reset code on [MeyerWeb.com](http://meyerweb.com/eric/tools/css/reset/)  
