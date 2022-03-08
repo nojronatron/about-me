@@ -1,5 +1,5 @@
 body {
-  background-color: azure;
+  background-color: rgb(120, 238, 238);
   font-family: helvetica sans-serif;
   font-size: large;
 }
@@ -15,17 +15,23 @@ main {
   height: 50%;
 }
 footer {
-  height: 25%;
+  font-size: medium;
+  display: flex;
+  padding: 4px 40px;
+  background-color: orange;
+  border-radius: 3em;
 }
 h1 {
+  display: flex;
   font-size: xx-large;
   font-weight: bolder;
-  padding: 4px;
+  padding: 4px 40px;
 }
 h2 {
+  display: flex;
   font-size: x-large;
   font-weight: bolder;
-  padding: 4px;
+  padding: 4px 40px;
 }
 img {
   border: 2px solid blue;
