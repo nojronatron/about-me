@@ -20,14 +20,19 @@ footer {
 h1 {
   font-size: xx-large;
   font-weight: bolder;
+  padding: 4px;
 }
 h2 {
   font-size: x-large;
   font-weight: bolder;
+  padding: 4px;
 }
 img {
   border: 2px solid blue;
   border-radius: 50%;
   padding: 2px;
   width: 100px;
+}
+p {
+  padding: 4px;
 }
