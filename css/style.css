@@ -4,7 +4,12 @@ body {
   font-size: large;
 }
 header {
+  padding: 4px;
+  display: flex;
+  justify-content: center;
   height: 25%;
+  background-color: orange;
+  border-radius: 3em;
 }
 main {
   height: 50%;
@@ -23,6 +28,6 @@ h2 {
 img {
   border: 2px solid blue;
   border-radius: 50%;
-  padding: 5px;
+  padding: 2px;
   width: 100px;
 }
