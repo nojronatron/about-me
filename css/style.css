@@ -1,25 +1,33 @@
 body {
-  background-color: rgb(120, 238, 238);
+  background-color: rgb(68, 233, 245);
   font-family: helvetica sans-serif;
   font-size: large;
 }
 header {
   padding: 4px;
   display: flex;
+  width: 30%;
+  margin: auto;
   justify-content: center;
   height: 25%;
-  background-color: orange;
+  background-color: azure;
+  border: 2px solid blue;
   border-radius: 3em;
 }
 main {
+  display: flex;
   height: 50%;
 }
 footer {
-  font-size: medium;
+  font-size: smaller;
   display: flex;
-  padding: 4px 40px;
-  background-color: orange;
+  padding: 4px;
+  background-color: azure;
+  border: 2px solid blue;
   border-radius: 3em;
+  width: 30%;
+  margin: auto;
+  justify-content: center;
 }
 h1 {
   display: flex;
@@ -42,13 +50,17 @@ img {
 p {
   padding: 4px;
 }
-.leftcolumn {
-  width: 33%;
-  float: left;
+article {
   margin: 4px;
+  width: 49%;
+  padding: 12px;
+  border: 2px solid blue;
+  border-radius: 3em;
+  background-color: azure;
+}
+.leftcolumn {
+  float: left;
 }
 .rightcolumn {
-  width: 33%;
   float: right;
-  margin: 4px;
 }
