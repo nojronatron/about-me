@@ -42,3 +42,13 @@ img {
 p {
   padding: 4px;
 }
+.leftcolumn {
+  width: 33%;
+  float: left;
+  margin: 4px;
+}
+.rightcolumn {
+  width: 33%;
+  float: right;
+  margin: 4px;
+}
