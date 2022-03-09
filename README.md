@@ -2,11 +2,11 @@
 
 ## About Me
 
-boilerplate I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
+I built this app so you could learn a little bit about me, and to demonstrate my software developer capabilities. The web app will ask you some questions about me, and treat you nicely with some responses, then welcome you to the main page.
 
 ### Author: Jon Rumsey
 
-Thanks go to classmate Kyle Honaker for help with some CSS rules.
+Thanks go to classmate Kyle Honaker for help with some CSS rules, and suggestions about layout.
 
 ### Links and Resources
 
