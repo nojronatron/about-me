@@ -1,7 +1,9 @@
 body {
   background-color: rgb(68, 233, 245);
-  font-family: helvetica sans-serif;
-  font-size: large;
+  font-family: 'Trebuchet MS' sans-serif;
+  font-size: medium;
+  background-image: url('../img/snowymountains.jpg');
+  background-repeat: no-repeat;
 }
 header {
   padding: 4px;
@@ -10,9 +12,6 @@ header {
   margin: auto;
   justify-content: center;
   height: 25%;
-  background-color: azure;
-  border: 2px solid blue;
-  border-radius: 3em;
 }
 main {
   display: flex;
@@ -21,7 +20,7 @@ main {
 footer {
   font-size: smaller;
   display: flex;
-  padding: 4px;
+  padding: 12px;
   background-color: azure;
   border: 2px solid blue;
   border-radius: 3em;
@@ -41,6 +40,14 @@ h2 {
   font-weight: bolder;
   padding: 4px 40px;
 }
+h3 {
+  display: flex;
+  font-size: large;
+  font-weight: bold;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+}
 img {
   border: 2px solid blue;
   border-radius: 50%;
@@ -58,9 +65,20 @@ article {
   border-radius: 3em;
   background-color: azure;
 }
+q {
+  padding-left: 5%;
+}
 .leftcolumn {
   float: left;
 }
 .rightcolumn {
   float: right;
+}
+.signature {
+  font-family: Verdana, Tahoma, sans-serif;
+}
+.sigLinks {
+  display: flex;
+  margin: auto;
+  justify-content: center;
 }
