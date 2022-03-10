@@ -23,4 +23,7 @@ Git Flow should follow this pattern throught this class:
 
 The purpose is to ensure that others working on the same project get your file adds and updates, keeping their code in sync with yours, and vice-versa.  
 
-## (for future use)
+## Paired programming 3/10/2022
+
+Driver: Kyle Honaker
+Navigator: Jon Rumsey

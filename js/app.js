@@ -1,6 +1,10 @@
 'use strict';
 
 let correctAnswerTotal = 0;
+let userguess = '';
+let questionArray = ['Do I like to ski?'];
+let correctAnswers = ['y', 'y', 'n', 'n', 'y'];
+let validResponsesArray = ['y', 'yes', 'n', 'no'];
 
 /*
 Questions 1 through 5
@@ -12,25 +16,42 @@ let responseUsername = prompt(askUserForName);
 // console.log(`Welcome to my website, ${responseUsername}! Try to answer the following questions correctly, using only yes or no.`);
 alert(`Welcome to my website, ${responseUsername}! Try to answer the following questions correctly, using only yes or no.`);
 
-let questionAlpha = 'Do I like to ski?';
-let responseAlpha = prompt(questionAlpha);
-// console.log(`${responseUsername} responded: ${responseAlpha}.`);
+function questionOne() {
+  let qIndex = 0;
+  let validResponse = false;
+  let responseAlpha = prompt(questionArray[qIndex]).toLocaleLowerCase();
+  
+  for (let idx = 0; idx < validResponsesArray.length; idx++) {
+    console.log(`${responseAlpha}  ${validResponsesArray[idx]}`);
+    if (responseAlpha === validResponsesArray[idx]) {
+      validResponse = true;
+      break;
+    }
+  }
 
-if (responseAlpha.toLocaleLowerCase() === 'y' || responseAlpha.toLocaleLowerCase() === 'yes') {
-  correctAnswerTotal++;
-  console.log(`Correct answers count: ${correctAnswerTotal}`);
-//   console.log(`That\'s right, ${responseUsername}! Skiing is so much fun.`);
-  alert(`That\'s right, ${responseUsername}! Skiing is so much fun.`);
-} else if (responseAlpha.toLocaleLowerCase() === 'n' || responseAlpha.toLocaleLowerCase() === 'no') {
-  // console.log(`Actually ${responseUsername}, I do enjoy skiing. On to the next question.`);
-  alert(`Actually ${responseUsername}, I do enjoy skiing. On to the next question.`);
-}
-else {
-  // console.log(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
-  alert(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
-}
+  if (validResponse) {
 
-let questionBravo = 'I only run when it is raining cats and dogs, right?';
+    if (responseAlpha.charAt(0) === correctAnswers[qIndex]) {
+      correctAnswerTotal++;
+      // console.log(`Correct answers count: ${correctAnswerTotal}`);
+      //   console.log(`That\'s right, ${responseUsername}! Skiing is so much fun.`);
+      alert(`That\'s right, ${responseUsername}! Skiing is so much fun.`);
+
+    } else {
+      // console.log(`Actually ${responseUsername}, I do enjoy skiing. On to the next question.`);
+      alert(`Actually ${responseUsername}, I do enjoy skiing. On to the next question.`);
+    }
+  } else {
+    // console.log(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
+    alert(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
+  }
+} 
+
+questionOne();
+
+
+function questionTwo() {
+  let questionBravo = 'I only run when it is raining cats and dogs, right?';
 let responseBravo = prompt(questionBravo);
 // console.log(`${responseUsername} responded: ${responseBravo}.`);
 
@@ -46,8 +67,12 @@ if (responseBravo.toLocaleLowerCase() === 'n' || responseBravo.toLocaleLowerCase
   // console.log(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
   alert(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
 }
+}
 
-let questionCharlie = 'Did I work for Yahoo!?';
+questionTwo();
+
+function questionThree() {
+  let questionCharlie = 'Did I work for Yahoo!?';
 let responseCharlie = prompt(questionCharlie);
 // console.log(`${responseUsername} responded: ${responseCharlie}.`);
 
@@ -63,8 +88,12 @@ if (responseCharlie.toLocaleLowerCase() === 'n' || responseCharlie.toLocaleLower
   // console.log(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
   alert(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
 }
+}
 
-let questionDelta = 'Is my dog a shitzu?';
+questionThree();
+
+function questionFour() {
+  let questionDelta = 'Is my dog a shitzu?';
 let responseDelta = prompt(questionDelta);
 // console.log(`${responseUsername} responded: ${responseDelta}.`);
 
@@ -80,14 +109,18 @@ if (responseDelta.toLocaleLowerCase() === 'y' || responseDelta.toLocaleLowerCase
   // console.log(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
   alert(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
 }
+}
 
-let questionEcho = 'Have I ever played an instrument?';
+questionFour();
+
+function questionFive() {
+  let questionEcho = 'Have I ever played an instrument?';
 let responseEcho = prompt(questionEcho);
 // console.log(`${responseUsername} responded: ${responseEcho}.`);
 
 if (responseEcho.toLocaleLowerCase() === 'y' || responseEcho.toLocaleLowerCase() === 'yes') {
   correctAnswerTotal++;
-  console.log(`Correct answers count: ${correctAnswerTotal}`);
+  // console.log(`Correct answers count: ${correctAnswerTotal}`);
   // console.log(`It\'s sad but true, but I can play guitar and drums. How well? Well...that is a question for another time ${responseUsername}.`);
   alert(`It\'s sad but true, but I can play guitar and drums. How well? Well...that is a question for another time ${responseUsername}.`);
 } else if(responseEcho.toLocaleLowerCase() === 'n' || responseEcho.toLocaleLowerCase() === 'no') {
@@ -97,11 +130,15 @@ if (responseEcho.toLocaleLowerCase() === 'y' || responseEcho.toLocaleLowerCase()
   // console.log(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
   alert(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
 }
+}
+
+questionFive();
+
 /* end 5 questions */
 
 /* question 6 the guess what number game */
-let number = 17;
-let userguess = '';
+function questionSix(){
+  let number = 17;
 let counter = 4;
 let higherOrLowerResponse = '';
 let gotItMessage = ` is correct! You guessed it!`;
@@ -109,13 +146,13 @@ let attemptsRemainMsg = `Attempts remaining `;
 let lostThisTimeMessage = `The number I was thinking of was: `;
 
 do {
-  console.log(attemptsRemainMsg + counter);
+  // console.log(attemptsRemainMsg + counter);
   userguess = prompt('I am thinking of a number between 0 and 20. Can you guess it?');
   
   if (userguess == number) {
     correctAnswerTotal++;
-    console.log(`Correct answers count: ${correctAnswerTotal}`);
-    console.log(number + gotItMessage);
+    // console.log(`Correct answers count: ${correctAnswerTotal}`);
+    // console.log(number + gotItMessage);
     alert(number + gotItMessage);
     counter = 0;
     break;
@@ -135,9 +172,15 @@ if (userguess != number && counter == 0) {
   console.log(lostThisTimeMessage + number);
   alert(lostThisTimeMessage + number);
 }
+}
+
+questionSix();
+
 /* end question 6 */
 
 /* start question 7 */
+function questionSeven() {
+  // console.log('questionSeven');
 let answerArr = ["blue", "aqua", "grey", "gray", "lime"];
 let attemptsRemaining = 6;
 let initialQuestion = `I am thinking of a color, can you guess it in ${attemptsRemaining} attempts?`;
@@ -176,6 +219,9 @@ do {
 
 // console.log(`array dump: ${answerArr}`);
 alert(`Here are all of the possible correct answers: ${answerArr}`);
+}
+
+questionSeven();
 
 /* end question 7 */
 
