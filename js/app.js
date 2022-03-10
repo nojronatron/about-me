@@ -1,11 +1,14 @@
 'use strict';
 
+let correctAnswerTotal = 0;
+
 /*
 Questions 1 through 5
 */
 
 let askUserForName = 'Hello! What is your first name?'; 
 let responseUsername = prompt(askUserForName);
+
 // console.log(`Welcome to my website, ${responseUsername}! Try to answer the following questions correctly, using only yes or no.`);
 alert(`Welcome to my website, ${responseUsername}! Try to answer the following questions correctly, using only yes or no.`);
 
@@ -14,6 +17,8 @@ let responseAlpha = prompt(questionAlpha);
 // console.log(`${responseUsername} responded: ${responseAlpha}.`);
 
 if (responseAlpha.toLocaleLowerCase() === 'y' || responseAlpha.toLocaleLowerCase() === 'yes') {
+  correctAnswerTotal++;
+  console.log(`Correct answers count: ${correctAnswerTotal}`);
 //   console.log(`That\'s right, ${responseUsername}! Skiing is so much fun.`);
   alert(`That\'s right, ${responseUsername}! Skiing is so much fun.`);
 } else if (responseAlpha.toLocaleLowerCase() === 'n' || responseAlpha.toLocaleLowerCase() === 'no') {
@@ -30,6 +35,8 @@ let responseBravo = prompt(questionBravo);
 // console.log(`${responseUsername} responded: ${responseBravo}.`);
 
 if (responseBravo.toLocaleLowerCase() === 'n' || responseBravo.toLocaleLowerCase() === 'no') {
+  correctAnswerTotal++;
+  console.log(`Correct answers count: ${correctAnswerTotal}`);
   // console.log(`Yup, ${responseUsername}, fair weather running is the way to go.`);
   alert(`Yup, ${responseUsername}, fair weather running is the way to go.`);
 } else if (responseBravo.toLocaleLowerCase() === 'y' || responseBravo.toLocaleLowerCase() === 'yes') {
@@ -45,6 +52,8 @@ let responseCharlie = prompt(questionCharlie);
 // console.log(`${responseUsername} responded: ${responseCharlie}.`);
 
 if (responseCharlie.toLocaleLowerCase() === 'n' || responseCharlie.toLocaleLowerCase() === 'no') {
+  correctAnswerTotal++;
+  console.log(`Correct answers count: ${correctAnswerTotal}`);
   // console.log(`Of course not... but I have worked for Citrix Systems Inc. and Microsoft.`);
   alert(`Of course not... but I have worked for Citrix Systems Inc. and Microsoft.`);
 } else if (responseCharlie.toLocaleLowerCase() === 'y' || responseCharlie.toLocaleLowerCase() === 'yes') {
@@ -63,6 +72,8 @@ if (responseDelta.toLocaleLowerCase() === 'y' || responseDelta.toLocaleLowerCase
   // console.log(`No, sorry ${responseUsername}, his name is "Wiley". One more!`);
   alert(`No, sorry ${responseUsername}, his name is "Wiley". One more!`);
 } else if (responseDelta.toLocaleLowerCase() === 'n' || responseDelta.toLocaleLowerCase() === 'no') {
+  correctAnswerTotal++;
+  console.log(`Correct answers count: ${correctAnswerTotal}`);
   // console.log(`Yes! That\'s right! Wiley is a 100 lb German Shepard Dog. Last one coming up!`);
   alert(`Yes! That\'s right! Wiley is a 100 lb German Shepard Dog. Last one coming up!`);
 } else {
@@ -75,6 +86,8 @@ let responseEcho = prompt(questionEcho);
 // console.log(`${responseUsername} responded: ${responseEcho}.`);
 
 if (responseEcho.toLocaleLowerCase() === 'y' || responseEcho.toLocaleLowerCase() === 'yes') {
+  correctAnswerTotal++;
+  console.log(`Correct answers count: ${correctAnswerTotal}`);
   // console.log(`It\'s sad but true, but I can play guitar and drums. How well? Well...that is a question for another time ${responseUsername}.`);
   alert(`It\'s sad but true, but I can play guitar and drums. How well? Well...that is a question for another time ${responseUsername}.`);
 } else if(responseEcho.toLocaleLowerCase() === 'n' || responseEcho.toLocaleLowerCase() === 'no') {
@@ -101,6 +114,8 @@ do {
   userguess = prompt('I am thinking of a number between 0 and 20. Can you guess it?');
   
   if (userguess == number) {
+    correctAnswerTotal++;
+    console.log(`Correct answers count: ${correctAnswerTotal}`);
     // console.log(number + gotItMessage);
     alert(number + gotItMessage);
     counter = 0;
@@ -118,6 +133,51 @@ if (userguess != number && counter == 0) {
 }
 /* end question 6 */
 
+/* start question 7 */
+let answerArr = ["blue", "aqua", "grey", "gray", "lime"];
+let attemptsRemaining = 6;
+let initialQuestion = `I am thinking of a color, can you guess it in ${attemptsRemaining} attempts?`;
+let successMessage = `That's correct, you guessed it!`;
+let userGotIt = false;
+let incorrectMessage = `Sorry ${responseUsername}, try again.`;
+
+// console.log(initialQuestion);
+alert(initialQuestion);
+userguess = '';
+
+do {
+  userguess = prompt(`What single-word color am I thinking of?`);
+  attemptsRemaining--;
+
+  for (var idx = 0; idx < answerArr.length; idx++) {
+    // console.log(`Testing array value ${answerArr[idx]}`);
+
+    if (userguess === answerArr[idx]) {
+      userGotIt = true;
+      correctAnswerTotal++;
+      console.log(`Correct answers count: ${correctAnswerTotal}`);
+      // console.log(`userGotIt set to 'true'.`);
+      break;
+    }
+  }
+
+  if (!userGotIt) {
+    // console.log(incorrectMessage);
+    alert(incorrectMessage);
+  }
+
+  // console.log(`attempts remaining: ${attemptsRemaining}`);
+} while (attemptsRemaining > 0 && !userGotIt);
+
+// console.log(`array dump: ${answerArr}`);
+alert(`Here are all of the possible correct answers: ${answerArr}`);
+
+/* end question 7 */
+
+/* how many were correct? */
+let finalCorrectCountMessage = `You answered ${correctAnswerTotal} questions correctly!`;
+// console.log(finalCorrectCountMessage);
+alert(finalCorrectCountMessage);
 
 // console.log(`Thank you for playing along, and for visiting my web app ${responseUsername}!`);
 alert(`Thank you for playing along, and for visiting my web app ${responseUsername}!`);
