@@ -50,6 +50,14 @@ p {
 q {
   padding-left: 5%;
 }
+ul {
+  list-style: circle inside;
+  padding-left: 2em;
+}
+ol {
+  list-style: decimal inside;
+  padding-left: 2em;
+}
 .signature {
   color: brown;
   padding: .4em;
