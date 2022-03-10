@@ -97,38 +97,42 @@ if (responseEcho.toLocaleLowerCase() === 'y' || responseEcho.toLocaleLowerCase()
   // console.log(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
   alert(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
 }
-/* end region 5 questions */
+/* end 5 questions */
 
 /* question 6 the guess what number game */
 let number = 17;
 let userguess = '';
 let counter = 4;
+let higherOrLowerResponse = '';
 let gotItMessage = ` is correct! You guessed it!`;
-let wrongAnsMessage = `Sorry that is not correct.`;
 let attemptsRemainMsg = `Attempts remaining `;
 let lostThisTimeMessage = `The number I was thinking of was: `;
 
 do {
-  // console.log(attemptsRemainMsg + counter);
-  
+  console.log(attemptsRemainMsg + counter);
   userguess = prompt('I am thinking of a number between 0 and 20. Can you guess it?');
   
   if (userguess == number) {
     correctAnswerTotal++;
     console.log(`Correct answers count: ${correctAnswerTotal}`);
-    // console.log(number + gotItMessage);
+    console.log(number + gotItMessage);
     alert(number + gotItMessage);
     counter = 0;
-  } else {
-    counter--;
-    // console.log(wrongAnsMessage + counter);
-    alert(`${wrongAnsMessage} ${attemptsRemainMsg}: ${counter}`);
+    break;
+  } else if (userguess > number) {
+    console.log(`Too high!`);
+    higherOrLowerResponse = 'Too high!';
+  } else if (userguess < number) {
+    console.log(`Too low!`);
+    higherOrLowerResponse = 'Too low!';
   }
 
+  counter--;
+  alert(`${higherOrLowerResponse} ${attemptsRemainMsg}: ${counter}`);
 } while (counter > 0);
 
 if (userguess != number && counter == 0) {
-  // console.log(lostThisTimeMessage + number);
+  console.log(lostThisTimeMessage + number);
   alert(lostThisTimeMessage + number);
 }
 /* end question 6 */
@@ -154,9 +158,10 @@ do {
 
     if (userguess === answerArr[idx]) {
       userGotIt = true;
-      correctAnswerTotal++;
-      console.log(`Correct answers count: ${correctAnswerTotal}`);
       // console.log(`userGotIt set to 'true'.`);
+      correctAnswerTotal++;
+      // console.log(`Correct answers count: ${correctAnswerTotal}`);
+      alert(successMessage);
       break;
     }
   }
