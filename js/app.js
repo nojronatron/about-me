@@ -1,6 +1,10 @@
 'use strict';
 
 let correctAnswerTotal = 0;
+let userguess = '';
+let questionArray = ['Do I like to ski?'];
+let correctAnswers = ['y', 'y', 'n', 'n', 'y'];
+let validResponsesArray = ['y', 'yes', 'n', 'no'];
 
 /*
 Questions 1 through 5
@@ -8,33 +12,43 @@ Questions 1 through 5
 
 let askUserForName = 'Hello! What is your first name?'; 
 let responseUsername = prompt(askUserForName);
-let userguess = '';
 
 // console.log(`Welcome to my website, ${responseUsername}! Try to answer the following questions correctly, using only yes or no.`);
 alert(`Welcome to my website, ${responseUsername}! Try to answer the following questions correctly, using only yes or no.`);
 
 function questionOne() {
+  let qIndex = 0;
+  let validResponse = false;
+  let responseAlpha = prompt(questionArray[qIndex]).toLocaleLowerCase();
+  
+  for (let idx = 0; idx < validResponsesArray.length; idx++) {
+    console.log(`${responseAlpha}  ${validResponsesArray[idx]}`);
+    if (responseAlpha === validResponsesArray[idx]) {
+      validResponse = true;
+      break;
+    }
+  }
 
-let questionAlpha = 'Do I like to ski?';
-let responseAlpha = prompt(questionAlpha);
-// console.log(`${responseUsername} responded: ${responseAlpha}.`);
+  if (validResponse) {
 
-if (responseAlpha.toLocaleLowerCase() === 'y' || responseAlpha.toLocaleLowerCase() === 'yes') {
-  correctAnswerTotal++;
-    // console.log(`Correct answers count: ${correctAnswerTotal}`);
-//   console.log(`That\'s right, ${responseUsername}! Skiing is so much fun.`);
-  alert(`That\'s right, ${responseUsername}! Skiing is so much fun.`);
-} else if (responseAlpha.toLocaleLowerCase() === 'n' || responseAlpha.toLocaleLowerCase() === 'no') {
-  // console.log(`Actually ${responseUsername}, I do enjoy skiing. On to the next question.`);
-  alert(`Actually ${responseUsername}, I do enjoy skiing. On to the next question.`);
-}
-else {
-  // console.log(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
-  alert(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
-}
+    if (responseAlpha.charAt(0) === correctAnswers[qIndex]) {
+      correctAnswerTotal++;
+      // console.log(`Correct answers count: ${correctAnswerTotal}`);
+      //   console.log(`That\'s right, ${responseUsername}! Skiing is so much fun.`);
+      alert(`That\'s right, ${responseUsername}! Skiing is so much fun.`);
+
+    } else {
+      // console.log(`Actually ${responseUsername}, I do enjoy skiing. On to the next question.`);
+      alert(`Actually ${responseUsername}, I do enjoy skiing. On to the next question.`);
+    }
+  } else {
+    // console.log(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
+    alert(`Don\'t feel like responding ${responseUsername}? that's okay. Please try another one.`);
+  }
 } 
 
 questionOne();
+
 
 function questionTwo() {
   let questionBravo = 'I only run when it is raining cats and dogs, right?';
