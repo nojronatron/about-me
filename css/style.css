@@ -3,10 +3,11 @@ body {
   font-family: Arial, Tahoma, Verdana, sans-serif;
   font-size: 100%;
   background-image: url('../img/snowymountains.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 header {
-  padding: 4px;
-  margin: 10px 40%;
+  width: 100%;
 }
 main {
   width: auto;
@@ -33,6 +34,7 @@ footer {
   border-radius: 3em;
   margin: 10px 41%;
   width: max-content;
+  text-align: center;
 }
 h1 {
   font-weight: bolder;
@@ -62,14 +64,15 @@ ol {
   color: brown;
   padding: .4em;
 }
-.sigLinks {
-  margin: auto;
-  justify-content: center;
-}
 #headshot {
+  display: block;
   border: 2px solid blue;
   border-radius: 50%;
   padding: 2px;
-  margin: 10px;
+  margin: auto;
   width: 150px;
+}
+#topTenSection {
+  width: 45%;
+  margin: auto;
 }
