@@ -142,7 +142,7 @@ function questionSix() {
     alert(`${higherOrLowerResponse} ${attemptsRemainMsg}: ${counter}`);
   } while (counter > 0);
 
-  if (userguess !== number && counter == 0) {
+  if (userguess != number && counter == 0) {
     console.log(lostThisTimeMessage + number);
     alert(lostThisTimeMessage + number);
   }
