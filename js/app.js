@@ -115,7 +115,7 @@ questionFive();
 
 /* question 6 the guess what number game */
 function questionSix() {
-  let number = 17;
+  let number = Math.floor((Math.random() * 20) +1);
   let counter = 4;
   let higherOrLowerResponse = '';
   let gotItMessage = ` is correct! You guessed it!`;
