@@ -32,7 +32,7 @@ footer {
   background-color: azure;
   border: 2px solid blue;
   border-radius: 3em;
-  margin: 10px 41%;
+  margin: auto;
   width: max-content;
   text-align: center;
 }
@@ -53,11 +53,11 @@ q {
   padding-left: 5%;
 }
 ul {
-  list-style: circle inside;
+  list-style: circle outside;
   padding-left: 2em;
 }
 ol {
-  list-style: decimal inside;
+  list-style: decimal outside;
   padding-left: 2em;
 }
 .signature {
@@ -73,6 +73,6 @@ ol {
   width: 150px;
 }
 #topTenSection {
-  width: 45%;
+  width: 450px;
   margin: auto;
 }
