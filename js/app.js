@@ -5,6 +5,7 @@ let userguess = '';
 let questionArray = ['Do I like to ski?'];
 let correctAnswers = ['y', 'y', 'n', 'n', 'y'];
 let validResponsesArray = ['y', 'yes', 'n', 'no'];
+let qIndex = 0;
 
 /*
 Questions 1 through 5
@@ -15,9 +16,8 @@ let responseUsername = prompt(askUserForName);
 alert(`Welcome to my website, ${responseUsername}! Try to answer the following questions correctly, using only yes or no.`);
 
 function questionOne() {
-  let qIndex = 0;
   let validResponse = false;
-  let responseAlpha = prompt(questionArray[qIndex]).toLocaleLowerCase();
+  let responseAlpha = prompt(questionArray[qIndex]);
 
   for (let idx = 0; idx < validResponsesArray.length; idx++) {
     console.log(`${responseAlpha}  ${validResponsesArray[idx]}`);
@@ -43,6 +43,8 @@ function questionOne() {
 }
 
 questionOne();
+
+qIndex++;
 
 function questionTwo() {
   let questionBravo = 'I only run when it is raining cats and dogs, right?';
