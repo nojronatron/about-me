@@ -21,7 +21,7 @@ function questionOne() {
 
   for (let idx = 0; idx < validResponsesArray.length; idx++) {
     console.log(`${responseAlpha}  ${validResponsesArray[idx]}`);
-    
+
     if (responseAlpha === validResponsesArray[idx]) {
       validResponse = true;
       break;
@@ -68,7 +68,7 @@ function questionThree() {
   if (responseCharlie.toLocaleLowerCase() === 'n' || responseCharlie.toLocaleLowerCase() === 'no') {
     correctAnswerTotal++;
     console.log(`Correct answers count: ${correctAnswerTotal}`);
-    alert(`Of course not... but I have worked for Citrix Systems Inc. and Microsoft.`);
+    alert(`Of course not... but I have worked for Citrix Systems Inc.`);
   } else if (responseCharlie.toLocaleLowerCase() === 'y' || responseCharlie.toLocaleLowerCase() === 'yes') {
     alert(`Yahoo is a big tech company, but no ${responseUsername}, I have not.`);
   } else {
@@ -142,7 +142,7 @@ function questionSix() {
     alert(`${higherOrLowerResponse} ${attemptsRemainMsg}: ${counter}`);
   } while (counter > 0);
 
-  if (userguess != number && counter == 0) {
+  if (userguess !== number && counter == 0) {
     console.log(lostThisTimeMessage + number);
     alert(lostThisTimeMessage + number);
   }
